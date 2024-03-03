@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.vsidx
+/.vs/FindMeARoomate/FileContentIndex/e4b03740-2e30-4840-85cc-0b18b9739183.vsidx
+/obj/Debug/net8.0/FindMeARoomate.AssemblyInfo.cs
+/obj/Debug/net8.0/FindMeARoomate.AssemblyInfoInputs.cache

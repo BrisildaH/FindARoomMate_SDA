@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FindMeARoomate.DataLayer.Entities.NewFolder
+namespace FindMeARoomate.DataLayer.Entities
 {
     public class DormitoryStudent
     {
-        
+
         [Key]
         public int ID { get; set; }
         [ForeignKey("Student")]
