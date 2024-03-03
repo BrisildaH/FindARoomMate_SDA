@@ -31,5 +31,7 @@ namespace FindMeARoomate.DataLayer.Entities
         public string Password { get; set; }
      
         public bool IsAdmin { get; set; }
+
+        public DateTime Birthday { get; set; }
     }
 }
