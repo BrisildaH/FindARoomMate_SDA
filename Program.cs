@@ -1,61 +1,38 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using FindMeARoomate.DataLayer;
 using FindMeARoomate.DataLayer.DatabaseContext;
 using FindMeARoomate.DataLayer.Entities;
+using FindMeARoomate.DataLayer.Repositories;
+Console.WriteLine("Welcome to Find Roomate Application!");
+Console.WriteLine("--------------------------------------------------");
+Console.WriteLine("Menu");
+Console.WriteLine("--------------------------------------------------");
+Console.WriteLine("1 - Register");
+Console.WriteLine("2 - Get All students");
 
-Console.WriteLine("Welcome!");
+int choice = int.Parse(Console.ReadLine());
 
-//List<Student> MerrGjitheStudentet()
-//{
-var dbContext = new FindMeARoomateContext();
-var students = dbContext.Students.ToList();
-//    return users;
-//}
-//var users = MerrGjitheStudentet();
-//foreach (var s in students)
-//{
-//    Console.WriteLine(s.Name + " | " + s.Surname + " | " + s.Email + " | " + s.Address + " | " + s.Password + " ");
-//}
+switch (choice)
+{
+    case 1:
+        {//Register
+            StudentService studentService = new StudentService();
+            studentService.RegisterStudent();
+            break;
+        }
 
+        case 2: 
+        {
+            var studentService = new StudentService();
+            var students = new List<Student>();
+         
+          students= studentService.GetStudents();
 
-//Add a dormitory
-//Take data from UI
-Console.WriteLine("--------------------------------------------------------------");
-Console.WriteLine("Register");
-var student = new Student();
-Console.WriteLine("Enter Name");
-student.Name = Console.ReadLine();
-//Console.WriteLine(student.Name);
+            foreach (var s in students)
+            {
 
-Console.WriteLine("--------------------------------------------------------------");
-
-//Add student to db
-
-var Student = new Student();
-
-Console.WriteLine("Enter Name");
-student.Name = Console.ReadLine();
-
-Console.WriteLine("Enter Surname");
-student.Surname = Console.ReadLine();
-
-Console.WriteLine("Enter Address");
-student.Address = Console.ReadLine();
-
-Console.WriteLine("Enter Gender");
-student.Gender = Console.ReadLine();
-
-Console.WriteLine("Enter Email");
-student.Email = Console.ReadLine();
-
-Console.WriteLine("Enter Password");
-student.Password = Console.ReadLine();
-
-
-var dbContext1 = new FindMeARoomateContext();
-await dbContext1.Students.AddAsync(student);
-await dbContext1.SaveChangesAsync();
-
-Console.WriteLine("Student Added");
-
-
-
+                Console.WriteLine(s.Name + "         " + s.Surname + "        " + s.Address);
+            }
+        }
+            break; 
+        }

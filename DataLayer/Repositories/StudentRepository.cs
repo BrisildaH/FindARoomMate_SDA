@@ -14,18 +14,16 @@ namespace FindMeARoomate.DataLayer.Repositories
         public void AddStudent(Student student)
         { // DbContext Add Method
             var dbContext = new FindMeARoomateContext();
-            dbContext.Students.AddAsync(student);
-            dbContext.SaveChangesAsync();
+            dbContext.Students.Add(student);
+            dbContext.SaveChanges();
         }
         // Get All Student
-        public void GetAllStudent(Student student)
+        public List<Student> GetAllStudent()
         {
             var context = new FindMeARoomateContext();
             var students = context.Students.ToList();
-            foreach (var s in students)
-            {
-                Console.WriteLine(s.Name + "         " + s.Surname + "        " + s.Address);
-            }
+          
+            return students;
         }
         // Get By ID
         public Student FindByID(int id)
