@@ -1,5 +1,4 @@
 ﻿using FindMeARoomate.DataLayer.Entities;
-using FindMeARoomate.DataLayer.Entities.NewFolder;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
